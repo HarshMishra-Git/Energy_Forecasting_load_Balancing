@@ -6,6 +6,15 @@
 
 The SmartGrid Energy Management System (SGEMS) is a comprehensive solution designed to forecast energy demand and optimize load balancing across smart grids. This project leverages advanced machine learning models and weather data integration to provide accurate energy consumption predictions, analyze weather impacts, balance energy loads, and offer eco-friendly recommendations. The project is implemented using Python and Streamlit, ensuring a user-friendly interface for data input, visualization, and analysis.
 
+## Outcome
+
+The outcome of this project includes:
+- Accurate energy demand forecasts using various models such as Prophet, LSTM, and GRU.
+- Analysis of the impact of weather conditions on energy consumption.
+- Optimization of load balancing to improve grid stability and efficiency.
+- Recommendations for reducing energy consumption and promoting eco-friendly practices.
+- A user-friendly interface for interacting with the system and obtaining insights.
+
 ## Live Demo
 
 Check out the live demo of the SmartGrid Energy Management System [here](https://smartgrid-ems.streamlit.app/).
@@ -100,6 +109,9 @@ pip install -r requirements.txt
 To run the Streamlit application, use the following command:
 
 ```bash
+git clone https://github.com/HarshMishra-Git/Energy_Forecasting_load_Balancing.git
+cd Energy_Forecasting_load_Balancing
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
