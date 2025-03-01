@@ -59,7 +59,7 @@ def set_theme():
 if 'theme' not in st.session_state:
     st.session_state.theme = 'light'
 
-theme_button = st.sidebar.button("Toggle Theme", on_click=set_theme)
+# theme_button = st.sidebar.button("Toggle Theme", on_click=set_theme)
 
 # App title and description
 st.title("Energy Load Forecasting and Balancing System")
