@@ -10,7 +10,8 @@ from src.weather_impact import WeatherImpactAnalyzer
 from src.recommendations import EnergyRecommender
 from src.pdf_report import PDFReport
 from src.onboarding import Onboarding
-from src.voice_assistant import VoiceAssistant
+# Remove the voice assistant import as it depends on speech_recognition
+# from src.voice_assistant import VoiceAssistant
 import io
 import numpy as np
 import plotly.express as px
@@ -40,8 +41,9 @@ if 'weather_impact_analyzer' not in st.session_state:
     st.session_state.weather_impact_analyzer = WeatherImpactAnalyzer()
 if 'energy_recommender' not in st.session_state:
     st.session_state.energy_recommender = EnergyRecommender()
-if 'voice_assistant' not in st.session_state:
-    st.session_state.voice_assistant = VoiceAssistant()
+# Remove the voice assistant session state as it depends on speech_recognition
+# if 'voice_assistant' not in st.session_state:
+#     st.session_state.voice_assistant = VoiceAssistant()
 if 'processed_df' not in st.session_state:
     st.session_state.processed_df = None
 if 'current_tip_index' not in st.session_state:
@@ -322,10 +324,6 @@ if navigation == 'Load Balancing' and st.session_state.processed_df is not None:
                 st.session_state.processed_df['energy_consumption'].values
             )
 
-            # Remove the following lines to prevent showing raw load distribution data
-            # st.write("Load Distribution:", load_distribution)  # Debugging statement
-            # st.write("Load Distribution DataFrame:", load_distribution_df)  # Debugging statement
-
             load_distribution_df = pd.DataFrame({
                 'time_point': np.arange(len(load_distribution['load_percentage'])),
                 'load_percentage': load_distribution['load_percentage'],
@@ -363,22 +361,23 @@ if navigation == 'Eco-Friendly Tips':
         if st.button("Next", key="next_tip"):
             st.session_state.current_tip_index = (current_tip_index + 1) % len(tips)
 
-if navigation == 'Voice Assistant':
-    # Voice-Activated Energy Insights
-    st.header("Voice-Activated Energy Insights")
-    st.markdown("""
-        This feature allows you to interact with the system using voice commands. 
-        Click the button below to start speaking and ask questions about energy consumption, forecasts, and more.
-    """)
-    if st.button("Activate Voice Assistant", key="activate_voice_assistant"):
-        with st.spinner("Listening..."):
-            query = st.session_state.voice_assistant.activate()
-            if query:
-                st.write(f"User said: {query}")
-                response = st.session_state.voice_assistant.respond_to_query(query)
-                st.write(response)
-            else:
-                st.error("Failed to recognize audio. Please try again.")
+# Remove the Voice Assistant section as it depends on speech_recognition
+# if navigation == 'Voice Assistant':
+#     # Voice-Activated Energy Insights
+#     st.header("Voice-Activated Energy Insights")
+#     st.markdown("""
+#         This feature allows you to interact with the system using voice commands. 
+#         Click the button below to start speaking and ask questions about energy consumption, forecasts, and more.
+#     """)
+#     if st.button("Activate Voice Assistant", key="activate_voice_assistant"):
+#         with st.spinner("Listening..."):
+#             query = st.session_state.voice_assistant.activate()
+#             if query:
+#                 st.write(f"User said: {query}")
+#                 response = st.session_state.voice_assistant.respond_to_query(query)
+#                 st.write(response)
+#             else:
+#                 st.error("Failed to recognize audio. Please try again.")
 
 # Footer
 st.sidebar.markdown("---")
