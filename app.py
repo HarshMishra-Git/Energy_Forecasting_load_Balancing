@@ -73,7 +73,7 @@ Welcome to the Energy Load Forecasting and Balancing System! This project is des
 - **Weather Impact Analysis:** Understand how weather conditions affect energy consumption and simulate different scenarios.
 - **Load Balancing:** Optimize energy distribution across the grid to enhance efficiency and stability.
 - **Eco-Friendly Tips:** Get recommendations to reduce energy consumption and promote sustainable practices.
-- **Voice-Activated Insights:** Interact with the system using voice commands to get quick insights and analyses.
+
 
 ### How to Use:
 1. **Upload Data:** Upload your historical energy consumption data in CSV format.
